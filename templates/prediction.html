@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Prime theorique</title>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/all.min.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/templatemo-style.css') }}" />
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/all.min.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" />
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='slick/slick.css') }}" />
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='slick/slick-theme.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/templatemo-style.css') }}" />
+
+  <style type="text/css">
+    th:tr {
+      color: rgb(255, 0, 0);
+
+    }
+
+    tr:nth-of-type(2n) {
+      border: 1px solid rgb(231, 223, 223);
+      background-color: rgba(150, 150, 150, 0.5);
+
+    }
+
+    td {
+      padding: 8px 8px;
+      border: 1px solid rgb(207, 200, 200);
+    }
+  </style>
+
+
+
+</head>
+
+<body id="aboutPage">
+  <div class="parallax-window" data-parallax="scroll" data-image-src="" style="background-color:rgb(87, 70, 84);">
+
+    <!-- begin heder -->
+    <h5 class="card-header">
+      <div class="row d-flex justify-content-center" style="background-color:teal;color:white">
+        <div class="col-md-8">
+          <h1 style="text-align:center;">
+            Prime pure
+          </h1>
+        </div>
+      </div>
+    </h5>
+
+    <!--- end header-->
+
+    <div class="container-fluid">
+
+      <section class="row" id="tmAbout">
+
+        <!-- start proba div -->
+        <div class="col-lg-4">
+          <div class="tm-bg-white-transparent tm-about-box" style="background-color:darkslategray;color:white;">
+
+            {% if ncluster %} <h4 class="">Probabilité des classes</h4> {% endif %}
+
+
+            <div>
+              <table style="margin-left: 20px;">
+                <!-- Table headers -->
+                <th>
+                  <tr style="color: rgb(255, 255, 255); ">
+
+                    {% if ncluster %}
+
+
+                    <td>Classe</td>
+                    <td>Probabilite</td>
+                  </tr>
+                </th>
+
+                <!-- For loop logic of jinja template -->
+
+                {% if ncluster %}
+
+
+
+                {% for i in range(ncluster) %}
+                <!-- table rows -->
+                <tr>
+                  <td>Cluster {{i+1}}</td>
+                  <td>{{ probaL[i] }}</td>
+                  {%endfor%}
+
+                </tr>
+                {% endif %}
+                {% endif %}
+
+              </table>
+
+              <table>
+
+                {% if shape %}<h3 style="color: white;text-align:center;">Tableau recapitulatif</h3> {% endif %}
+
+
+
+
+
+                <!-- For loop logic of jinja template -->
+
+                {% if shape %}
+
+
+
+
+                <!-- table rows -->
+
+                <!--Première partie-->
+                <tr>
+                  <td>Civilte:<br>&nbsp;{{tables[0][1]}}</td>
+                  <td>Nombre de place:&nbsp;{{tables[1][1]}}</td>
+                  <td>Puissance fiscale:&nbsp;{{tables[2][1]}}</td>
+                </tr>
+
+
+                <!--Deuxieme partie-->
+                <tr>
+                  <td>Age Assuré:&nbsp;{{tables[3][1]}}</td>
+                  <td>Anciennete:<br>&nbsp;{{tables[4][1]}} </td>
+                  <td> Age Permis:<br>&nbsp;{{tables[5][1]}}</td>
+                </tr>
+                <!--Troisième  partie-->
+
+                <tr>
+                  <td>Age Vehicule:&nbsp;{{tables[6][1]}}</td>
+                  <td>Categorie:<br>&nbsp;{{tables[7][1]}}</td>
+                  <td>Energie:<br>&nbsp;{{tables[8][1]}}</td>
+                </tr>
+
+                <!--Quatrième  partie-->
+
+                <tr>
+                  <td>Profession:&nbsp; {{tables[9][1]}}</td>
+                  <td>Marque:<BR>&nbsp;{{tables[10][1]}} </td>
+                  <td>Usage:&nbsp; {{tables[11][1]}}</td>
+                </tr>
+
+                {% endif %}
+
+              </table>
+
+            </div>
+
+
+          </div>
+          <div class="align-center">
+            <a href="/form" class="btn" style="background-color:Navy;color:white;width: 70%;">Retour au formulaire</a>
+          </div>
+
+        </div>
+        <!-- end proba div -->
+
+        <!-- start prime div -->
+        <div class="col-lg-4 ">
+          <div class="tm-bg-Navy-transparent tm-about-box" style="background-color:darkslategray;color:white">
+            {% if ncluster %} <h3 style="text-align:center;">Prime theorique</h3> {% endif %}
+
+
+            {% if shape %} <h3 style="text-align:center;">Prime theorique</h3>{% endif %}
+
+
+            <p class="tm-about-description">
+            <div>
+
+              <table style="margin-left: 20px;">
+                <tr style="color: white; ">
+
+                <tr>
+                  <td>classe</td>
+                  <td>{{ Classe }}</td>
+                </tr>
+
+
+                </tr>
+
+
+                <tr>
+                  <td>Frequence moyennne</td>
+                  <td>{{ FreqMoy }}</td>
+                </tr>
+                <tr>
+                  <td>Cout moyen</td>
+                  <td>{{ CoutMoy }}</td>
+                </tr>
+
+                <tr>
+                  <td>Prime theorique</td>
+                  <td>{{ Prime_pure }}</td>
+                </tr>
+
+              </table>
+            </div>
+            <br>
+            </p>
+
+          </div>
+
+          <div class="align-center">
+            <button class="btn" style="background-color:rgb(86, 65, 177);color:white;width:80%;text-align:center">Prime
+              ajustée :
+
+              {% if shape %}
+              {{Prime_ajustee}}
+
+              {% endif %}
+
+            </button>
+          </div>
+        </div>
+        <!-- end prime div -->
+
+        <!-- start garantie div -->
+        <div class="col-lg-4">
+          <div class="tm-bg-transparent tm-about-box" style="background-color:navy;color:white">
+            <h5 class="tm-about-name">Choix des garanties annexes</h5>
+            <form action="{{ url_for('prediction')}}" method="GET">
+
+              <p class="tm-about-description">
+              <div class="form-check">
+                <label for="duree">Duree du contrat</label>
+                <br>
+                <select id="id_duree" name="id_duree" class="" style="width:80% ; height:40px">
+                  <option value=1 {% if Exposition=="1" %} selected {% endif %}>12 mois</option>
+                  <option value=0.083{% if Exposition=="0.083" %} selected {% endif %}>1 mois</option>
+                  <option value="0.25" {% if Exposition=="0.25" %} selected {% endif %}>3 mois</option>
+                  <option value="0.5" {% if Exposition=="0.5" %} selected {% endif %}>6 mois</option>
+                  <option value="0.75" {% if Exposition=="0.75" %} selected {% endif %}>9 mois</option>
+
+                </select>
+              </div>
+              <br>
+
+
+              <div class="form-check">
+                <input class="form-check-input" name="domage" type="checkbox" value="Dommages tous accidents"
+                  id="flexCheckChecked" {% if "domage" in Keys %} checked {% endif %}>
+                <label class="form-check-label" for="flexCheckChecked"> Dommages tous accidents</label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" name="defenseRecours" type="checkbox" value="Defense et Recours"
+                  id="flexCheckChecked" {% if "defenseRecours" in Keys %} checked {% endif %}>
+                <label class="form-check-label" for="flexCheckChecked"> Defense et Recours</label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" name="BRG" type="checkbox" value="Bris de glaces" id="flexCheckChecked"
+                  {% if "BRG" in Keys %} checked {% endif %}>
+                <label class="form-check-label" for="flexCheckChecked"> Bris de glaces</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" name="DCol" type="checkbox" value="Dommages Collision"
+                  id="flexCheckChecked" {% if "DCol" in Keys %} checked {% endif %}>
+
+                <label class="form-check-label" for="flexCheckChecked"> Dommages Collision</label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" name="RAnti" type="checkbox" value="Recours anticipé"
+                  id="flexCheckChecked" {% if "RAnti" in Keys %} checked {% endif %}>
+                <label class="form-check-label" for="flexCheckChecked"> Recours anticipé</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" name="vol" type="checkbox" value="Vol" id="flexCheckChecked" {% if "vol"
+                  in Keys %} checked {% endif %}>
+                <label class="form-check-label" for="flexCheckChecked"> Vol</label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" name="Incendie" type="checkbox" value="Incendie et Explosions"
+                  id="flexCheckChecked" {% if "Incendie" in Keys %} checked {% endif %}>
+                <label class="form-check-label" for="flexCheckChecked">Incendie et Explosions</label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" name="DTAccident" type="checkbox" value="Dommages tous accidents"
+                  id="flexCheckChecked" {% if "DTAccident" in Keys %} checked {% endif %}>
+                <label class="form-check-label" for="flexCheckChecked"> Dommages tous accidents</label>
+              </div>
+              </p>
+
+              <div class="text-right">
+                <button type="submit" class="btn tm-btn-submit"
+                  style="background-color:rgb(156, 14, 14);color:white;width: 100%;">Prime ajustée</button>
+              </div>
+            </form>
+
+            <!-- <a href="#tmFeatures" class="btn btn-secondary tm-btn-app-feature">Details</a>  -->
+          </div>
+        </div>
+        <!-- end garantie div -->
+
+      </section>
+
+      <!-- start footer -->
+      <footer class="row">
+        <p class="col-12 text-white text-center tm-copyright-text">
+          © Allianz cote d'ivoire consulter notre application Diapazon <a href="https://www.allianz.ci/diapAZon.html"
+            class="tm-copyright-link">ici</a>
+      </footer>
+      <!-- end footer -->
+    </div>
+    <!-- .container-fluid -->
+  </div>
+
+  <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/parallax.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='slick/slick.min.js') }}"></script>
+
+</body>
+
+</html>

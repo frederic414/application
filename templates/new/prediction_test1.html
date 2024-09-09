@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction</title>
+
+    <style type="text/css">
+	
+        th:tr{
+            color: blue;
+    
+        }
+        tr:nth-of-type(2n){
+            border: 1px solid black;
+            background-color: rgba(150, 150, 150, 0.5);
+    
+        }
+    
+        td{
+            padding: 8px 8px;
+            border: 1px solid black;
+        }
+    </style>
+
+
+</head>
+<body>
+    
+
+
+    <div>
+        vous avez choisir les garanties:
+        <br>
+        <br>
+        {% for i in range(nbre)  %}
+           {{ garantie[i]}} <br>
+        {% endfor %}
+       
+        <br>
+        La prime sera ajutée en fonction des taux de ces garanties une fois connu
+      </div>
+      
+    <h2 style="background-color:Navy;width:40%;color:white;">Prime ajustée en fonction de l'exposition:  {{ prime}} </h2>
+    <div>
+      
+        <br>
+        <br>
+       <a class="nav-link" href="/prediction"
+       >Pge precedente</a>
+    </div>
+    
+    <!-- div 2 -->
+   
+
+</body>
+</html>

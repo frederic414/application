@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Login page</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/all.min.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/templatemo-style.css') }}"/>
+
+  </head>
+  <body>
+
+    	<!--header section start -->
+
+    <nav class="navbar navbar-dark" style="background-color:rgb(86, 5, 235);">
+      <a class="navbar-brand" href="">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="./img/az.jpg" width="100" height="100" class="d-inline-block align-top" alt="">
+            </div>
+            <div class="col-md-8" style="border: 1px solid rgb(0, 0, 0);">
+                <br>
+                <button style="color: rgb(236, 236, 245);" class="btn btn-lg">
+                  Allianz Cote d'Ivoire
+                </button>
+            </div>
+        </div>
+      </a>
+   
+    </nav>
+   
+    <!-- header section end -->
+
+
+     <!-- banner section start -->
+     <div class="banner_section">
+      <div class="container-fluid">
+        <div id="main_slider" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+          <div class="row">
+            <div class="col-md-7">
+              <div class="image_1"><img src="static/images/bg-011.jpg"></div>
+            </div>
+            <div class="col-md-4">
+            
+              <div class="contact_bg">
+              <div class="input_main">
+                <div class="container">
+                  <h2 class="request_text">Veuillez vous connecter</h2>
+                  <form action="/action_page.php">
+                    <div class="form-group">
+                      <input type="text" class="email-bt" placeholder="DROP" name="Email">
+                    </div>
+                    <div class="form-group">
+                      <input type="text" class="email-bt" placeholder="WHEN" name="Email">
+                    </div>
+                  </form>
+                </div> 
+              </div>
+              <div class="send_bt"><a href="#">SEARCH</a></div>
+            </div>
+          </div>
+        </div>
+      </div>   
+    </div>
+ 
+  </div>
+        
+      </div>
+    </div>
+    <!-- banner section end -->
+
+        <!-- Page footer -->
+        <footer class="row">
+          <p class="col-12 text-white text-center tm-copyright-text">
+            © Allianz cote d'ivoire   consulter notre application Diapazon <a href="#" class="tm-copyright-link">ici</a>
+          </p>
+        </footer>
+      
+      
+    
+
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/parallax.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+  </body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Tarification</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/all.min.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='slick/slick.css') }}"/>    
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='slick/slick-theme.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/templatemo-style.css') }}" />
+  </head>
+<!--Parallo Template https://templatemo.com/tm-534-parallo
+-->
+  <body id="servicesPage">
+    <div  style="background-color: Navy;">
+     
+    	<!--header section start -->
+
+      
+   
+    <!-- header section end -->
+
+    
+    <div class="row justify-content-center">
+      <div class="col-md-10">
+          <div id="formulaire" class="card shadow p-2 mb-1 bg-white rounded">
+              <h5 class="card-header">
+                  <div class="row d-flex justify-content-center">
+                      <div class="col-md-8">
+                          <h1 style="text-align:center;">
+                              Formulaire
+                          </h1>
+                      </div>
+                  </div>
+              </h5>
+              <div class="card-body">
+                
+                  <form method="POST" action="{{ url_for('prediction')}}" style="background-image:rgb(247, 9, 9)">
+
+                    <!--first line start -->
+
+                    <div class="row d-flex justify-content-center">
+                      <div class="form-group col-md-4">
+                          <label for="codeproduit"><h5>Civilité</h5></label>
+                          <br>
+                          <select  id="form_Civilite" name="form_Civilite" class="" style="width:80% ; height:40px">
+                            <option value="Monsieur" selected="yes">Monsieur</option>
+                            <option value="Madame">Madame</option>
+                            <option value="Personne Morale">Personne Morale</option>
+                          </select>
+                      </div>
+
+                      <div class="form-group col-md-4">
+                          <label for="Labplace" ><h5>Nombre de places</h5></label>
+                         
+                          <input name="formplaces" type="number" class="" style="width:80% ; height:40px" id="formplaces"  required>
+                      </div>
+
+                      <div class="form-group col-md-4">
+                        <label for="labpuissance" style="text-align:center;"><h5>Puissance fiscale</h5></label>
+                      
+                        <input name="form_puissance" type="number" class=""   style="width:80% ; height:40px" id="form_puissance"  required>
+                      </div>
+                    </div>
+
+                <!--first line end -->
+
+                         
+                <!--sencond line start -->   
+                  <div class="row d-flex justify-content-center">
+                    <div class="form-group col-md-4">
+                      <label for="codeprofil" style="text-align:center;"><h5>Date de naissance</h5></label>
+                      <br>
+                      <input name="form_ageassure" type="date" class=""   style="width:80% ; height:40px" id="form_ageassure"  required>
+                    </div>
+
+                    <div class="form-group col-md-4">
+                      <label for="codeprofil" style="text-align:center;"><h5>Date d'entrée</h5></label>
+                      <br>
+                      <input name="form_Anciennete" type="date" class=""   style="width:80% ; height:40px" id="form_Anciennete"  required>
+                    </div>
+
+                    <!-- <div class="form-group col-md-4">
+                      <label for="codeprofil" style="text-align:center;"><h5>Date d'entrée</h5></label>
+                      <br>
+                      <input name="form_dateEntree" type="date" class=""   style="width:80% ; height:40px" id="form_dateEntree"  required>
+                    </div> -->
+
+                    <!-- <div class="form-group col-md-4">
+                      <label for="codeprofil" style="text-align:center;"><h5>Date d'expiration</h5></label>
+                      <br>
+                      <input name="form_dateExpiration" type="date" class=""   style="width:80% ; height:40px" id="form_dateExpiration"  required>
+                    </div> -->
+
+                    <div class="form-group col-md-4">
+                      <label for="codeprofil" style="text-align:center;"><h5>Age permis</h5></label>
+                      <br>
+                      <input name="form_permis" type="date" class=""   style="width:80% ; height:40px" id="form_permis"  required>
+                    </div>
+                  </div>
+
+              <!--second line end -->
+
+                  <!--third line start -->
+               
+                  <div class="row d-flex justify-content-center">
+
+                    <div class="form-group col-md-4">
+                      <label for="codeprofil" style="text-align:center;"><h5>Age du vehicule</h5></label>
+                      <br>
+                      <input name="form_Agevehicule" type="number" class=""   style="width:80% ; height:40px" id="form_vehicule"  required>
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label for="form_categorie"><h5>Categorie du contrat</h5></label>
+                        
+                        <select  id="form_categorie" name="form_categorie" class="" style="width:80% ; height:40px">
+                          <option value="Mono" selected="yes">Mono</option>
+                          <option value="Flotte">FLOTTE</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group col-md-4">
+                      <label for="labEnergie"><h5>Energie</h5></label>
+                      <br>
+                      <select  id="form_energie" name="form_energie" class="" style="width:80% ; height:40px">
+                        <option value="Essence" selected="yes">ESSENCE</option>
+                        <option value="DIESEL">DIESEL</option>
+                      </select>
+                    </div>
+                  </div>
+               
+              <!--third line end -->
+
+
+                  <!--fourth line start -->
+
+                  <div class="row d-flex justify-content-center">
+
+                    <div class="form-group col-md-4">
+                      <label for="labProfession"><h5>Profession</h5></label>
+                      
+                      <select  id="form_profession" name="form_profession" class="" style="width:80% ; height:40px">
+                        <option value="Salariés" selected="yes">Salariés</option>
+                        <option value="VRP & autres professions">VRP & autres professions</option>
+                        <option value="Profession inconnue">Profession inconnue </option>
+                        <option value="Fonctionnaires & assimilés">Fonctionnaires & assimilés </option>
+                        <option value="Sans profession">Sans profession</option>
+                        <option value="Profession libérale, médicale">Profession libérale, médicale</option>
+                        <option value="Artisans">Artisans</option>
+                        <option value="Agriculteurs">Agriculteurs</option>
+                        <option value="Retraité">Retraité</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group col-md-4">
+                      <label for="labProfession"><h5>Marque</h5></label>
+                      <select  id="form_Marque" name="form_Marque" class="" style="width:80% ; height:40px">
+                      
+                        {% for marque in Marque %}
+                          <option value="{{ marque }}" selected>{{ marque }}</option>
+                        {% endfor %}
+                        
+                      </select>
+                    </div>
+
+                      <div class="form-group col-md-4">
+                      <label for="id_ValeurVenale" style="text-align:center;"><h5>Valeur Venale</h5></label>
+                      <br>
+                      <input name="id_ValeurVenale" type="number" class=""   style="width:80% ; height:40px" id="id_ValeurVenale"  required>
+                    </div>
+                   
+                    <div class="form-group col-md-4">
+                      <label for="labUsage"><h5>Usage</h5></label>
+                      <br>
+                      <select  id="form_Usage" name="form_Usage" class="" style="width:80% ; height:40px"> 
+                        <option value="Promenade et affaire" selected="yes">Promenade et affaire</option>
+                        <option value="Promenade - trajet">Promenade - trajet</option>
+                        <option value="Privé et Professionnel">Privé et Professionnel</option>
+
+                        <option value="Trasport privé de marchandises">Trasport privé de marchandises</option>
+                        <option value="Transport public de marchandises">Transport public de marchandises</option>
+
+                        <option value="Location avec chauffeur: Autobus"> Location avec chauffeur: Autobus</option>
+                        <option value="Location avec chauffeur: Utilitaire"> Location avec chauffeur: Utilitaire</option>
+                        <option value="Location Utilitaire"> Location Utilitaire</option>
+                        <option value=" Location avec chauffeur"> Location avec chauffeur</option>
+                        <option value="Location véhicule de tourisme">Location véhicule de tourisme </option>
+
+                       
+                      </select>
+                    </div>
+
+                  </div>
+
+                <!--fourth line end -->
+
+               
+                      <hr>
+                      <div class="row d-flex justify-content-around">
+                          <div class="align-left" style="padding:-100px -80px ">
+                              <button type="reset" class="btn btn-lg btn-danger"> Nouvel enregistrement</button>
+                          </div>
+                          <div class="col-md-3">
+                              <button style="background-color: navy;color:white;width: 100%;" name="send_form" type="submit" class="btn btn-lg ">
+                                  Prime
+                              </button>
+                          </div>
+                      </div>
+          
+                  </form>
+                  <hr>
+              </div>
+          </div>
+      </div>
+    </div>
+    </div>
+        
+        
+
+      <!-- Page footer -->
+        <footer class="row">
+          <p class="col-12 text-white text-center tm-copyright-text">
+            © Allianz cote d'ivoire   consulter notre application Diapazon <a href="https://www.allianz.ci/diapAZon.html" class="tm-copyright-link">ici</a>
+        </footer>
+    
+      <!-- end footer -->
+    </div>
+
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/parallax.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='slick/slick.min.js') }}"></script>
+   
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html >
+  <!--From https://codepen.io/frytyler/pen/EGdtg-->
+  <head>
+    <meta charset="UTF-8">
+    <title>Machine Learning API</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
+  </head>
+
+  <body>
+    <div class="login">
+      <h1>Classification model</h1>
+      <!-- Main Input For Receiving Query to our ML  {{ url_for('form')}} a preciser dans l'option action  -->
+      <form action="" method="post">
+        <input type="text" name="places" placeholder="places" required="required" />
+        <input type="text" name="Puissance" placeholder="Puissance" required="required" />
+        <input type="text" name="AgePermis" placeholder="Age Permis" required="required" />
+        <input type="text" name="AgeVeh" placeholder="Age Vehicule" required="required" />  
+        <input type="text" name="Energie" placeholder="Energie" required="required" />  
+        <!-- <input type="text" name="Formule" placeholder="Formule" required="required" />  -->
+        <label>Pays :</label>
+        <select name="pays">
+          <option value="france">France</option>
+          <option value="belgique">Belgique</option>
+          <option value="suisse">Suisse</option>
+        </select>
+
+        <input type="select" name="Civilite" placeholder="Civilite" required="required"  />  
+        <input type="text" name="ville" placeholder="Ville" required="required" />  
+        <input type="text" name="CatUsage" placeholder="Type Usage" required="required" />  
+        <input type="text" name="CatProfession" placeholder="Profession" required="required" />  
+        <input type="text" name="CatApporteur" placeholder="Apporteur" required="required" />  
+        <input type="text" name="CatMarque" placeholder="Marque" required="required" />  
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button> 
+      </form>	
+    </div>
+  </body>
+</html>
